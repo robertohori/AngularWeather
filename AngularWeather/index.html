@@ -17,10 +17,10 @@
 <body>
     <div ng-controller="IndexWeatherController">
         <h1> Weather </h1>
-        <div ng-repeat="city in weather.city">
-            <h2>{{city.name}} </h2>
-            <h2>{{city.temp}}º </h2>
-            <p>{{city.desc}}</p>
+        <div >
+            <h2>{{weather.city.name}} </h2>
+            <h2>{{weather.city.temp}}º </h2>
+            <p>{{weather.city.desc}}</p>
         </div>
     </div>
 
