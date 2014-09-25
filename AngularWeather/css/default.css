@@ -9,7 +9,7 @@ body {
 .marketing,
 .footer {
   padding-right: 15px;
-  padding-left: 15px;
+  padding-left: 15px;   
 }
 
 /* Custom page header */
@@ -54,7 +54,7 @@ body {
 */
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+  margin: 30px 0 0 0;
 }
 .marketing p + h4 {
   margin-top: 28px;
@@ -92,4 +92,50 @@ h1, h2,h3,h4,h5,p{
    box-shadow: 5px -5px 2px #eeeeee;
    -webkit-box-shadow: 5px -5px 2px #eeeeee;
    -moz-box-shadow: 5px -5px 2px #eeeeee;
+    padding: 5px;
+
 }
+
+
+/*Animation*/
+
+.slide-animate-container {
+  position:relative;
+  background:white;
+  border:1px solid black;
+  height:40px;
+  overflow:hidden;
+}
+
+.slide-animate {
+  padding:10px;
+}
+
+.slide-animate.ng-enter, .slide-animate.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:block;
+  padding:10px;
+}
+
+.slide-animate.ng-enter {
+  top:-50px;
+}
+.slide-animate.ng-enter.ng-enter-active {
+  top:0;
+}
+
+.slide-animate.ng-leave {
+  top:0;
+}
+.slide-animate.ng-leave.ng-leave-active {
+  top:50px;
+}
+
+/*--*/

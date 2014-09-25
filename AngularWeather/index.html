@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html ng-app="weather">
 
@@ -8,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>WeatherNow</title>
+    <!-- Custom styles for this template -->
+    <link href="css/default.css" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -15,28 +18,55 @@
 </head>
 
 <body>
-    <div ng-controller="IndexWeatherController">
-        <h1> Weather Today </h1>
-        <div>
-            <h2>{{weather.today.name}} </h2>
-            <h2>{{weather.today.temp}}º </h2>
-            <p>{{weather.today.desc}}</p>
-        </div>
-        <h1> Weather week </h1>
 
-        <div ng-repeat="List in weather.week.list">
-            <h2>{{List.dt}} </h2>
-            <h2>{{List.weather[0].description}} </h2>
-              <h2>  {{List.temp.day}}</h2>
-              <h2>      Min:{{List.temp.min}} </h2>
-                <h2>    max:{{List.temp.max}}</h2>
+
+    <div class="container" ng-controller="IndexWeatherController">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+
+              
+            </ul>
+            <h1 class="text-muted" id="titlemain">WeatherNow</h1> 
+        </div>
+
+        <div class="jumbotron" id="main">
+
+
+            <div class="row">
+                <div class="col-md-10">
+               
+                    <input class="form-control" type="text" name="city" ng-keydown="callload()" ng-model="city" >
+                   
+                </div>
+                <div class="col-md-2">
+                    <button  class="btn btn-primary" ng-click="loadmain()">Search</button>
+
+                </div>
+            </div>
+
+
+   
+    <today></today>
             
-             <h2>  night:{{List.temp.night}}</h2>
-              <h2>      ever:{{List.temp.eve}} </h2>
-                <h2>    morn:{{List.temp.morn}}</h2>
+
             
         </div>
+<week></week>
+
+                          
+
+    <div class="footer">
+        <p>&copy; Roberto Hori 2014</p>
     </div>
+</div>
+    <!-- /container -->
+
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.min.js"></script>
     <script type="text/javascript" src="lib\app.js"></script>
 </body>
