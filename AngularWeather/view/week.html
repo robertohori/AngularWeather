@@ -1,0 +1,25 @@
+
+ <div class="row">
+            <div ng-repeat="List in weather.week.list">
+                <div class="col-lg-6 marketing">
+                    <div class=" sombrarredondada">
+                        <h3>{{ convertDate(List.dt, 1)}} </h3>
+                        <p>{{List.weather[0].description}}</p>
+                        <table align=center>
+                            <tr>
+                                <td>
+                                    <h2><img ng-src="img_clima/{{List.weather[0].icon}}.png" align="left middle"/> {{typetemp(List.temp.day,'C')}}</h2>
+                                </td>
+                                <td>
+                                    <h1>&nbsp;/&nbsp;<h1></td><td align=left>max:{{typetemp(List.temp.max,'C')}} <br>min:{{typetemp(List.temp.min,'C')}}</td>
+                        </tr>
+                    </table>
+                    <p>
+                    Morn:  {{typetemp(List.temp.morn,'C')}} <br>
+                    Ever: {{typetemp(List.temp.eve,'C')}} <br>
+                    Nigh: {{typetemp(List.temp.night,'C')}} <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
